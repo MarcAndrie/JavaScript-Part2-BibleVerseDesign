@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Quote</title>
+    <style>
+        #quoteBox {
+            padding: 20px;
+            width: fit-content;
+            border: 2px solid transparent; /* Invisible border initially */
+        }
+    </style>
+</head>
+<body>
+
+    <button id="addDesign">Add Design</button>
+    <button id="removeDesign">Remove Design</button>
+
+    <div id="quoteBox">
+        <p id="verse"><i><b>Deuteronomy 31:6</b></i></p>
+        <p id="quote">"Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you."</p>
+    </div>
+
+    <script>
+        document.getElementById("addDesign").addEventListener("click", function() {
+            let quoteBox = document.getElementById("quoteBox");
+            quoteBox.style.background = "linear-gradient(to right, #3d7cae, #c8e0f0)";
+            quoteBox.style.padding = "20px";
+            quoteBox.style.border = "2px solid black";
+            quoteBox.style.width = "500px";
+
+            let verse = document.getElementById("verse");
+            verse.style.fontSize = "24px";
+            verse.style.fontFamily = "Georgia, serif";
+            verse.style.fontWeight = "bold";
+            verse.style.fontStyle = "italic";
+
+            let quote = document.getElementById("quote");
+            quote.style.fontSize = "22px";
+            quote.style.fontFamily = "'Papyrus', fantasy";
+        });
+
+        document.getElementById("removeDesign").addEventListener("click", function() {
+            let quoteBox = document.getElementById("quoteBox");
+            quoteBox.style.background = "none"; 
+            quoteBox.style.padding = "0";
+            quoteBox.style.border = "2px solid transparent"; // Make border invisible
+            quoteBox.style.width = "auto";
+
+            let verse = document.getElementById("verse");
+            verse.style = ""; // Reset all styles
+
+            let quote = document.getElementById("quote");
+            quote.style = ""; // Reset all styles
+        });
+    </script>
+
+</body>
+</html>
